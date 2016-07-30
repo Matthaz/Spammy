@@ -1,6 +1,6 @@
 from discord.ext import commands
 import discord
-import urllib
+import aiohttp
 
 class Memes():
     def __init__(self, bot):
@@ -18,8 +18,10 @@ class Memes():
         await self.bot.upload('Pics.Nope_dog.gif')
 
     @commands.command(pass_context=True)
-    async def lewd(self):
-        urllib.urlretrieve("")
+    async def img(self, url):
+        with aiohttp.ClientSession() as session:
+            with session.get(url) as response:
+                await self.bot.upload('{}'.format(response.content))
 
 
 def setup(bot):

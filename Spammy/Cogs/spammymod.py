@@ -14,7 +14,7 @@ class Mod:
                 requiredRole = True
                 break
 
-        if requiredRole == True:
+        if requiredRole == True or ctx.message.author.id == "137021464896471041":
             await self.bot.change_nickname(member=user, nickname="{}".format(name))
         else:
             await self.bot.say("`This user has insufficient permissions. The role SpammyMod is required to use this command.`")
