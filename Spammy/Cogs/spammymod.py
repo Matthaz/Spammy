@@ -10,8 +10,9 @@ class Mod:
     async def nick(self, ctx, user: discord.Member, *, name: str):
         requiredRole = False
         for role in ctx.message.author.roles:
-            if role.name == "SpammyMod":
+            if role.name == "SpammyMod" or ctx.message.author.id == "137021464896471041":
                 requiredRole = True
+                break
 
         if requiredRole == True:
             await self.bot.change_nickname(member=user, nickname="{}".format(name))

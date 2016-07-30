@@ -1,5 +1,6 @@
 from discord.ext import commands
 import discord
+import urllib
 
 class Memes():
     def __init__(self, bot):
@@ -13,8 +14,12 @@ class Memes():
             await self.bot.upload('Pics.noose.jpg', content="{} Kill yourself faggot :^)".format(user.mention))
 
     @commands.command(pass_context=True, brief="|    Sends a nope gif")
-    async def nope(self, ctx):
-        await self.bot.send_file(ctx.message.channel, 'Pics.Nope_dog.gif')
+    async def nope(self):
+        await self.bot.upload('Pics.Nope_dog.gif')
+
+    @commands.command(pass_context=True)
+    async def lewd(self):
+        urllib.urlretrieve("")
 
 
 def setup(bot):
