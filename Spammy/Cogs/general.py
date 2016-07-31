@@ -15,5 +15,6 @@ class General():
         await self.bot.say(
             "{}: Do you want to know how this bot is hosted or need a place to host your own? DigitalOcean is the place for you! Use this link for $10 starting credit: https://m.do.co/c/3fa7d1d8510a".format(ctx.message.author.mention))
 
+
 def setup(bot):
     bot.add_cog(General(bot))

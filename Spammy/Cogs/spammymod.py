@@ -14,10 +14,13 @@ class Mod:
                 requiredRole = True
                 break
 
-        if requiredRole == True or ctx.message.author.id == "137021464896471041":
-            await self.bot.change_nickname(member=user, nickname="{}".format(name))
-        else:
-            await self.bot.say("`This user has insufficient permissions. The role SpammyMod is required to use this command.`")
+        try:
+            if requiredRole == True or ctx.message.author.id == "137021464896471041":
+                await self.bot.change_nickname(member=user, nickname="{}".format(name))
+            else:
+                await self.bot.say("`This user has insufficient permissions. The role SpammyMod is required to use this command.`")
+        except:
+            await self.bot.say("```Could not complete this request; FORBIDDEN: Bot role rank too low. \nIf help is required, join: https://discord.gg/ysndeCU```")
 
 
 

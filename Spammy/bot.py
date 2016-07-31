@@ -21,6 +21,11 @@ async def on_ready():
     bot.load_extension("Cogs.osu")
 
 
+@bot.event
+async def on_server_join(server):
+    await bot.send_message(server, content="```Hi! \nThanks for adding me to {}, I think i'm gonna like it here! \nIf you need any help with me, be sure to check out the #support channel in https://discord.gg/ysndeCU```".format(server))
+
+
 with open("login.txt", "r") as f:
     var = f.read()
 
