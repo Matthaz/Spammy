@@ -14,7 +14,7 @@ class Osu():
     @commands.command(brief="|  Posts osu profile and information")
     async def osu(self, name):
         profile = await self.api.get_user(username=name)
-        await self.bot.say("```{}'s profile |  \n-------------- \nRank: #{} (#{} {}) \nTotal Score: {} \nAcc: {}``` \n<https://osu.ppy.sh/u/{}> \nhttps://a.ppy.sh/{}".format(name, profile[0].pp_rank, profile[0].pp_country_rank, profile[0].country, profile[0].total_score, profile[0].accuracy, profile[0].user_id, profile[0].user_id))
+        await self.bot.say("```xl\n{}'s profile  \n-------------- \nRank: #{} (#{} {}) \nPP: {} | Level: {} \nTotal Score: {} \nAcc: {}``` \n<https://osu.ppy.sh/u/{}> \nhttps://a.ppy.sh/{}".format(name, profile[0].pp_rank, profile[0].pp_country_rank, profile[0].country, profile[0].pp_raw, profile[0].level, profile[0].total_score, profile[0].accuracy, profile[0].user_id, profile[0].user_id))
 
 
 def setup(bot):

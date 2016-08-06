@@ -16,5 +16,6 @@ class Assignment():
                 await self.bot.send_file(ctx.message.channel, "unknown.jpg")  # uploads image
 
 
+
 def setup(bot):
     bot.add_cog(Assignment(bot))
