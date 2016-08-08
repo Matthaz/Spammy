@@ -24,9 +24,9 @@ class General():
     async def weather(self, *,word="cityName, Country"):
         name = word.split(",")
         if len(name) == 1:
-            url = "http://api.openweathermap.org/data/2.5/weather?q={}&APPID={}&units=metric".format(name[0].replace(" ", "_"), apiKey)
+            url = "http://api.openweathermap.org/data/2.5/weather?q={}&APPID={}&units=metric".format(name[0].replace(" ", "_"), apiKey.strip())
         else:
-            url = "http://api.openweathermap.org/data/2.5/weather?q={},{}&APPID={}&units=metric".format(name[0].replace(" ", "_"), name[1].replace(" ", "_"), apiKey)
+            url = "http://api.openweathermap.org/data/2.5/weather?q={},{}&APPID={}&units=metric".format(name[0].replace(" ", "_"), name[1].replace(" ", "_"), apiKey.strip())
 
         with aiohttp.ClientSession() as session:
             async with session.get(url) as resp:
