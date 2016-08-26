@@ -6,7 +6,7 @@ import discord
 
 
 var = "Spammy.exe's Command List"
-bot = commands.Bot(command_prefix='=dev ', description=var, pm_help=True, help_attrs=dict(hidden=True))
+bot = commands.Bot(command_prefix='= ', description=var, pm_help=True, help_attrs=dict(hidden=True))
 cogs = ["Cogs.general", "Cogs.info", "Cogs.memes", "Cogs.myanimelist", "Cogs.oauth", "Cogs.osu", "Cogs.spammyadmin", "Cogs.spammymod"]
 
 
